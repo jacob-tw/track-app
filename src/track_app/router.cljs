@@ -5,7 +5,10 @@
             [reitit.coercion.spec :as rss]
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]
-            [track-app.views :as views]))
+            [track-app.views :as views]
+            [track-app.pages.home :as home]
+            [track-app.pages.accomplished :as accomplished]
+            [track-app.pages.ongoing :as ongoing]))
 
 (rf/reg-event-fx
  ::push-state
@@ -42,10 +45,13 @@
   ["/"
    [""
     {:name    ::home
-     :view    views/main-panel}]
-   ["other1"
-    {:name    ::other
-     :view    views/other-panel}]])
+     :view    home/render}]
+   ["accomplished"
+    {:name    ::accomplished
+     :view    accomplished/render}]
+   ["ongoing"
+    {:name    ::ongoing
+     :view    ongoing/render}]])
 
 (defn on-navigate [new-match]
   (when new-match

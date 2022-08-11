@@ -35,6 +35,11 @@
 
 
 
-(defn other-panel [_]
+(defn other-panel []
   (fn []
-    [:div "other panel"]))
+    [:div "other panel"
+     [:header
+      [:nav
+       [:a
+        {:href "/"
+        :on-click #(re-frame/dispatch [::push-state ::home])} "hey"]]]]))

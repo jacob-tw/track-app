@@ -563,36 +563,36 @@ html {
   display: flex;
 }
 
-.h-full {
-  height: 100%;
+.grid {
+  display: grid;
 }
 
 .h-screen {
   height: 100vh;
 }
 
-.w-1\/5 {
-  width: 20%;
-}
-
 .w-full {
   width: 100%;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
   flex-direction: column;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-between {
   justify-content: space-between;
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
-.self-end {
-  align-self: flex-end;
+.justify-items-end {
+  justify-items: end;
 }
 
 .border {
@@ -601,6 +601,15 @@ html {
 
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 body {
