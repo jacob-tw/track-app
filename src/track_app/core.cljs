@@ -5,7 +5,7 @@
    [track-app.events :as events]
    [track-app.views :as views]
    [track-app.config :as config]
-   ))
+   [track-app.router :as router]))
 
 
 (defn dev-setup []
@@ -16,9 +16,10 @@
   (re-frame/clear-subscription-cache!)
   (let [root-el (.getElementById js/document "app")]
     (rdom/unmount-component-at-node root-el)
-    (rdom/render [views/main-panel] root-el)))
+    (rdom/render [views/main {:router router/router}] root-el)))
 
 (defn init []
   (re-frame/dispatch-sync [::events/initialize-db])
   (dev-setup)
+  (router/init-routes!)
   (mount-root))
