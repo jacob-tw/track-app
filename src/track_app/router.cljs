@@ -8,7 +8,8 @@
             [track-app.views :as views]
             [track-app.pages.home :as home]
             [track-app.pages.accomplished :as accomplished]
-            [track-app.pages.ongoing :as ongoing]))
+            [track-app.pages.ongoing :as ongoing]
+            ))
 
 (rf/reg-event-fx
  ::push-state
@@ -51,7 +52,10 @@
      :view    accomplished/render}]
    ["ongoing"
     {:name    ::ongoing
-     :view    ongoing/render}]])
+     :view    ongoing/render}]
+   ["signup"
+    {:name    ::signup
+     :view    home/signup-render}]])
 
 (defn on-navigate [new-match]
   (when new-match

@@ -10,6 +10,7 @@
  (fn-traced [_ _]
    db/app-db))
 
+
 (re-frame/reg-event-fx
  :log-in
  (fn [{:keys [db]} [_ {:keys [username password]}]]

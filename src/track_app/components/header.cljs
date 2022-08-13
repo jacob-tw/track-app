@@ -19,4 +19,9 @@
     {:href "ongoing"
      :id "ongoing"
      :on-click #(re-frame/dispatch [::push-state ::ongoing])
-     :class "border px-2"} "Track Ongoing"]])
+     :class "border px-2"} "Track Ongoing"]
+   [:a
+    {:href "signup"
+     :id "signup"
+     :on-click #(re-frame/dispatch [::push-state ::signup])
+     :class "border px-2"} "Sign Up"]])
