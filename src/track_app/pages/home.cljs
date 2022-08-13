@@ -1,28 +1,30 @@
 (ns track-app.pages.home
   (:require [re-frame.core :as re-frame]
-            [track-app.subs :as subs]
-            [track-app.components.header :as header]))
+            [reagent.core :as r]
+            [track-app.components.header :as header]
+            [track-app.subs :as subs]))
 
 
 (defn render []
-  (let [name (re-frame/subscribe [::subs/name])]
+  (let [name (re-frame/subscribe [::subs/name])
+        blank-form {:username ""
+                    :password ""}
+        form-data (r/atom blank-form)]
     (fn []
       [:div
        [header/render]
-       [:header
-        "Hello from " @name
-        [:nav {:class "flex justify-between"}
-
-         [:label {:class "flex flex-col"} "username"
-          [:input
-           {:type :text
-            :class "border"}]]
-         [:label
-          {:class "flex flex-col"}"password"
-          [:input
-           {:type :password
-            :class "border"}]]
-
-         [:a
-          {:href "other1"
-           :on-click #(re-frame/dispatch [::push-state ::other])}"hello"]]]])))
+       [:div
+        {:class "flex flex-col items-center py-10"}
+        [:label  "Username"]
+        [:input
+         {:type :text
+          :class "border"
+          :id :Username
+          :value (:username @form-data)
+          :on-change #(swap! form-data assoc :username (.. % -target -value))}]
+        [:label "Password"]
+        [:input
+         {:type :password
+          :class "border"
+          :value (:password @form-data)
+          :on-change #(swap! form-data assoc :password (.. % -target -value))}]]])))

@@ -9,4 +9,5 @@
   (fn []
     [:div
      [header/render]
-     [:div "ongoing"]]))
+     [:div
+      {:class "font-bold"}"ongoing"]]))
