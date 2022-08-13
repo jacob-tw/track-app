@@ -5,19 +5,18 @@
 (defn render
   []
   [:div {:class "flex flex-row justify-end"}
-   [:a {:href "/"}
-    [buttons/header-button
-     {:id "home"
-      :button-label "Home"
-      :on-click #(re-frame/dispatch [::push-state ::home])}]]
-   [:a {:href "accomplished"}
-    [buttons/header-button
-     {:id "accomplished"
-      :button-label "Track Accomplished"
-      :on-click #(re-frame/dispatch [::push-state ::accomplished])
-      :href "accomplished"}]]
-   [:a {:href "ongoing"}
-    [buttons/header-button
-     {:id "ongoing"
-      :button-label "Track Ongoing"
-      :on-click #(re-frame/dispatch [::push-state ::ongoing])}]]])
+   [:a
+    {:href "/"
+     :id "home"
+     :on-click #(re-frame/dispatch [::push-state ::home])
+     :class "border px-2"} "Home"]
+   [:a
+    {:href "accomplished"
+     :id "accomplished"
+     :on-click #(re-frame/dispatch [::push-state ::accomplished])
+     :class "border px-2"} "Track Accomplished"]
+   [:a
+    {:href "ongoing"
+     :id "ongoing"
+     :on-click #(re-frame/dispatch [::push-state ::ongoing])
+     :class "border px-2"} "Track Ongoing"]])

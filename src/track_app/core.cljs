@@ -5,7 +5,8 @@
    [track-app.events :as events]
    [track-app.views :as views]
    [track-app.config :as config]
-   [track-app.router :as router]))
+   [track-app.router :as router]
+   [track-app.pages.home :as home]))
 
 
 (defn dev-setup []
