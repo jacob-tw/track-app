@@ -25,3 +25,13 @@
        {:db (-> db
                 (assoc-in [:auth :uid] username)
                 (update-in [:errors] dissoc :username))}))))
+
+(re-frame/reg-event-fx
+ :sign-up
+ (fn [{:keys [db]} [_ {:keys [first-name last-name username password]}]]
+   {:db (-> db
+            (assoc-in [:auth :uid] username)
+            (assoc-in [:users username ]{:id username
+                                         :profile {:first-name first-name
+                                                   :last-name last-name
+                                                   :password password}}))}))
