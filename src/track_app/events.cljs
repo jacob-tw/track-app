@@ -9,3 +9,20 @@
  ::initialize-db
  (fn-traced [_ _]
    db/app-db))
+
+
+
+(re-frame/reg-event-fx
+ :log-in
+ (fn [{:keys [db]} [_ {:keys [username password]}]]
+   (let [user (get-in db [:users username])
+         correct-password? (= (get-in user [:profile :password]) password)]
+     (cond
+       (not user)
+       {:db (assoc-in db [:errors :username] "user not found")}
+       (not correct-password?)
+       {:db (assoc-in db [:errors :username] "wrong password")}
+       correct-password?
+       {:db (-> db
+                (assoc-in [:auth :uid] username)
+                (update-in [:errors] dissoc :username))}))))

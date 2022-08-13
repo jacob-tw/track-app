@@ -19,7 +19,7 @@
         [:input
          {:type :text
           :class "border"
-          :id :Username
+          :id :username
           :value (:username @form-data)
           :on-change #(swap! form-data assoc :username (.. % -target -value))}]
         [:label "Password"]
@@ -27,4 +27,7 @@
          {:type :password
           :class "border"
           :value (:password @form-data)
-          :on-change #(swap! form-data assoc :password (.. % -target -value))}]]])))
+          :on-change #(swap! form-data assoc :password (.. % -target -value))}]
+        [:button
+         {:class "border my-6 p-3"
+          :on-click #(re-frame/dispatch [:log-in @form-data])} "Log-in"]]])))
