@@ -10,4 +10,4 @@
     [:div
      [header/render]
      [:div
-      {:class "font-bold"}"ongoing"]]))
+      {:class "font-bold text-5xl"}"ongoing"]]))
