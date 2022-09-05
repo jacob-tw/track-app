@@ -9,7 +9,7 @@
            id
            value-from-form
            on-change-event]}]
-  [:div {:class "flex flex-col"}
+  [:div {:class "flex flex-col w-4/5"}
    [:label input-label]
    [:input
     {:type input-type
