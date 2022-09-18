@@ -36,7 +36,17 @@
                                                    :last-name last-name
                                                    :password password}}))}))
 
-(re-frame/reg-event-db
+(re-frame/reg-event-fx
  :add-to-app-db
- (fn [db [_ {:keys [first-name]}]]
-   (assoc db :first first-name)))
+ (fn [{:keys [db]} [_ {:keys [first-name last-name initial-assessment poc dob poc-end-date claim-number]}]]
+   {:db (-> db
+            (assoc-in [:patients (str first-name " " last-name)]  {:dob dob
+                                                              :initial-assessment initial-assessment
+                                                              :poc poc
+                                                              :poc-end-date poc-end-date
+                                                              :claim-number claim-number}))}))
+
+
+
+;;ask about data flow from app-db to postgres (more for query)
+;;ask about fx vs db (wtf actually is a side-effect)
