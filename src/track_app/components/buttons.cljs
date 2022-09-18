@@ -13,3 +13,14 @@
    {:id id
     :on-click on-click
     :class "px-2 border"} button-label])
+
+(defn form-button
+  [{:keys [button-label
+           id
+           on-click
+           class]}]
+  [:button
+   {:id id
+    :on-click on-click
+    :class (str "px-2 py-1 my-3 border"
+                class)} button-label])

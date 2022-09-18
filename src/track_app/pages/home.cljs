@@ -75,3 +75,9 @@
          [:button
           {:class "border my-6 p-3"
            :on-click #(re-frame/dispatch [:sign-up @form-data])} "Sign-up"]]]])))
+
+
+(defn render-2
+  []
+  (let [blank-form {:username ""
+                    :password ""}]))

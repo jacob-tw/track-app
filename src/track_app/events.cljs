@@ -35,3 +35,8 @@
                                          :profile {:first-name first-name
                                                    :last-name last-name
                                                    :password password}}))}))
+
+(re-frame/reg-event-db
+ :add-to-app-db
+ (fn [db [_ {:keys [first-name]}]]
+   (assoc db :first first-name)))

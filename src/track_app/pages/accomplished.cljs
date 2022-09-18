@@ -8,5 +8,5 @@
   []
   (fn []
     [:div
-     [header/render]
-     [:div "accomplished"]]))
+     [:div {:class "bg-black text-white"}
+      [header/render]]]))
