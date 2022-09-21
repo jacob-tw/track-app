@@ -598,10 +598,6 @@ html {
   height: 80%;
 }
 
-.h-2\/5 {
-  height: 40%;
-}
-
 .w-full {
   width: 100%;
 }
@@ -646,10 +642,6 @@ html {
   gap: 0.5rem;
 }
 
-.justify-self-center {
-  justify-self: center;
-}
-
 .border {
   border-width: 1px;
 }
@@ -658,14 +650,14 @@ html {
   border-width: 4px;
 }
 
-.bg-blue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
-}
-
 .bg-indigo {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
 .p-3 {
