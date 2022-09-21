@@ -41,10 +41,10 @@
  (fn [{:keys [db]} [_ {:keys [first-name last-name initial-assessment poc dob poc-end-date claim-number]}]]
    {:db (-> db
             (assoc-in [:patients (str first-name " " last-name)]  {:dob dob
-                                                              :initial-assessment initial-assessment
-                                                              :poc poc
-                                                              :poc-end-date poc-end-date
-                                                              :claim-number claim-number}))}))
+                                                                   :initial-assessment initial-assessment
+                                                                   :poc poc
+                                                                   :poc-end-date poc-end-date
+                                                                   :claim-number claim-number}))}))
 
 
 

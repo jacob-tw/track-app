@@ -1,4 +1,4 @@
-(ns track-app.pages.ongoing
+(ns track-app.pages.new-patient
   (:require [re-frame.core :as re-frame]
             [track-app.subs :as subs]
             [track-app.components.header :as header]

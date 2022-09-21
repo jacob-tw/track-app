@@ -16,10 +16,10 @@
      :on-click #(re-frame/dispatch [::push-state ::accomplished])
      :class "border px-2"} "Track Accomplished"]
    [:a
-    {:href "ongoing"
-     :id "ongoing"
-     :on-click #(re-frame/dispatch [::push-state ::ongoing])
-     :class "border px-2"} "Track Ongoing"]
+    {:href "new-patient"
+     :id "new-patient"
+     :on-click #(re-frame/dispatch [::push-state ::new-patient])
+     :class "border px-2"} "New Patient"]
    [:a
     {:href "signup"
      :id "signup"

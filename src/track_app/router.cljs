@@ -8,7 +8,7 @@
             [track-app.views :as views]
             [track-app.pages.home :as home]
             [track-app.pages.accomplished :as accomplished]
-            [track-app.pages.ongoing :as ongoing]
+            [track-app.pages.new-patient :as new-patient]
             ))
 
 (rf/reg-event-fx
@@ -50,9 +50,9 @@
    ["accomplished"
     {:name    ::accomplished
      :view    accomplished/render}]
-   ["ongoing"
-    {:name    ::ongoing
-     :view    ongoing/render}]
+   ["new-patient"
+    {:name    ::new-patient
+     :view    new-patient/render}]
    ["signup"
     {:name    ::signup
      :view    home/signup-render}]])
