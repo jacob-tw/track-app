@@ -80,4 +80,10 @@
 (defn render-2
   []
   (let [blank-form {:username ""
-                    :password ""}]))
+                    :password ""}]
+    (fn []
+      [:div {:class "h-screen bg-indigo"}
+       [:div {:class "bg-blue"}
+        [:h1 {:class "font-bold text-4xl p-2 text-black"} "Active Patients"]
+        [header/render]]
+       [:div {:class "bg-indigo"}]])))

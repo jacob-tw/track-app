@@ -46,3 +46,14 @@
          [:button
           {:class "border my-6 p-3"
            :on-click #(re-frame/dispatch [:sign-up @form-data])} "Sign-up"]]]])))
+
+(defn render
+  []
+  (let [blank-form {:username ""
+                    :password ""}]
+    (fn []
+      [:div {:class "h-screen bg-indigo"}
+       [:div {:class "bg-blue"}
+        [:h1 {:class "font-bold text-4xl p-2 text-black"} "Profile"]
+        [header/render]]
+       [:div {:class "bg-indigo"}]])))

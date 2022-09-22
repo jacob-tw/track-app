@@ -46,7 +46,7 @@
   ["/"
    [""
     {:name    ::active-patients
-     :view    home/render}]
+     :view    home/render-2}]
    ["to-do-list"
     {:name    ::to-do-list
      :view    to-do/render}]
@@ -55,7 +55,7 @@
      :view    new-patient/render}]
    ["profile"
     {:name    ::profile
-     :view    profile/signup-render}]])
+     :view    profile/render}]])
 
 (defn on-navigate [new-match]
   (when new-match
