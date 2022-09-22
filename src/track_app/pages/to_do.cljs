@@ -1,4 +1,4 @@
-(ns track-app.pages.accomplished
+(ns track-app.pages.to-do
   (:require [re-frame.core :as re-frame]
             [track-app.subs :as subs]
             [track-app.components.header :as header]))

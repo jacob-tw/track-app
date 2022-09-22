@@ -5,9 +5,9 @@
             [reitit.coercion.spec :as rss]
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]
-            [track-app.views :as views]
+            [track-app.pages.profile :as profile]
             [track-app.pages.home :as home]
-            [track-app.pages.accomplished :as accomplished]
+            [track-app.pages.to-do :as to-do]
             [track-app.pages.new-patient :as new-patient]
             ))
 
@@ -45,17 +45,17 @@
 (def routes
   ["/"
    [""
-    {:name    ::home
+    {:name    ::active-patients
      :view    home/render}]
-   ["accomplished"
-    {:name    ::accomplished
-     :view    accomplished/render}]
+   ["to-do-list"
+    {:name    ::to-do-list
+     :view    to-do/render}]
    ["new-patient"
     {:name    ::new-patient
      :view    new-patient/render}]
-   ["signup"
-    {:name    ::signup
-     :view    home/signup-render}]])
+   ["profile"
+    {:name    ::profile
+     :view    profile/signup-render}]])
 
 (defn on-navigate [new-match]
   (when new-match

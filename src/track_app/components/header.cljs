@@ -7,21 +7,21 @@
   [:div {:class "flex flex-row justify-end"}
    [:a
     {:href "/"
-     :id "home"
-     :on-click #(re-frame/dispatch [::push-state ::home])
-     :class "border px-2"} "Home"]
-   [:a
-    {:href "accomplished"
-     :id "accomplished"
-     :on-click #(re-frame/dispatch [::push-state ::accomplished])
-     :class "border px-2"} "Track Accomplished"]
+     :id "active-patients"
+     :on-click #(re-frame/dispatch [::push-state ::active-patients])
+     :class "border px-2"} "Active Patients"]
    [:a
     {:href "new-patient"
      :id "new-patient"
      :on-click #(re-frame/dispatch [::push-state ::new-patient])
      :class "border px-2"} "New Patient"]
    [:a
-    {:href "signup"
-     :id "signup"
-     :on-click #(re-frame/dispatch [::push-state ::signup])
-     :class "border px-2"} "Sign Up"]])
+    {:href "to-do-list"
+     :id "to-do-list"
+     :on-click #(re-frame/dispatch [::push-state ::to-do-list])
+     :class "border px-2"} "To Do"]
+   [:a
+    {:href "profile"
+     :id "profile"
+     :on-click #(re-frame/dispatch [::push-state ::profile])
+     :class "border px-2"} "Profile"]])
